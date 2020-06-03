@@ -1,0 +1,56 @@
+cs50
+Flask
+Flask-Session
+requests
+
+
+api_key pk_1fa8972080b74b369f300367146748e4
+
+Register =>
+ - if came through GET, should display the forma
+ - When the form is submitted via POST, insert the new user into user table
+    - create input to confirm password
+    - check if is valid of i usar name already exists
+    - hash users password
+
+Quote =>
+    - if GET = shloud display a form to request a stock
+    - if POST lookup the stock using the aready bulit lookup function | display results
+    - handle invalid stock intended to lookup
+
+Buy =>
+    - When GET = display form
+    - When POST = purchase the stock if the user can afford it || or display error message
+    - Create other tables of information about stocks
+    - Table (what stock, how many shares, who bought)
+    - Display results in index.html
+
+Index =>
+    - Display the table with all current stocks, the number of shares, the current price, total value of each holding
+    - Display user's current balance.
+    - Query from a table that has that info - must lookup for the current price.
+    - Will be display in a template that should creat - like index.html
+
+Sell =>
+    - Via GET = display form
+    - Via POST = seel the specified number of shares, and update the users cash
+
+History = >
+    - Table that show all transactions = will be a increasingly growing table
+
+Personal Touch =>
+    - let users change password
+    - allow users to add cash
+    - allow buying or selling stock from the index page
+    - add password complexity requirements
+
+
+FINANCE.DB =>
+    Users Table ->
+        CREATE TABLE IF NOT EXISTS 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL, 'cash' NUMERIC NOT NULL DEFAULT 10000.00 );
+CREATE UNIQUE INDEX 'username' ON "users" ("username");
+
+
+HOW TO GET THE TIME THE USER MADE THE TRANSACTION
+datetime_object = datetime.datetime.now()
+print(datetime_object)

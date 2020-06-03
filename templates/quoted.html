@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <div class="container p-5">
+
+        <p>
+            A share of {{ session['stock'].name }} ({{ session['stock'].symbol }}) costs {{ session['stock'].price }}
+        </p>
+
+    </div>
+
+{% endblock %}
